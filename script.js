@@ -88,6 +88,7 @@ body {
     height: 400px;
     width: 400px;
     transition: filter ease .5s;
+    border-radius: 0px 0px 4px 4px;
 }
 .qr-input:focus + .qr-img {
     filter:  blur(13px);
