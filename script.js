@@ -1,5 +1,4 @@
 'use strict';
-const prefix = 'https://chart.googleapis.com/chart?cht=qr&chs=400x400&chl=';
 
 function updateLocalData() {
   let ds = [];
@@ -8,8 +7,15 @@ function updateLocalData() {
 }
 
 function bindImage(img, chl) {
-  img.src = prefix + encodeURIComponent(chl);
   img.chl = chl;
+  img.innerHTML = '';
+  let qr = new QRCode(img, {
+    width: 360,
+    height: 360,
+    useSvg: true,
+    correctLevel: QRCode.CorrectLevel.H
+  });
+  qr.makeCode(chl);
 }
 
 function createQR(chl) {
@@ -17,7 +23,7 @@ function createQR(chl) {
   container.className = 'qr-container';
   let input = document.createElement('textarea');
   input.className = 'qr-input';
-  let qrImg = document.createElement('img');
+  let qrImg = document.createElement('div');
   qrImg.className = 'qr-img';
   if (chl) {
     bindImage(qrImg, chl);
@@ -56,11 +62,12 @@ function clearSearch() {
 }
 
 function init() {
+  let content = document.querySelector('div.content');
   let add = document.createElement('button');
   add.className = 'qr-add';
   add.textContent = '添加二维码生成器';
   add.addEventListener('click', () => {
-    document.body.insertBefore(createQR('voilà'), add)
+    content.insertBefore(createQR('voilà'), add)
   });
   let share = document.querySelector('button.qr-share');
   share.addEventListener('click', (e) => {
@@ -71,12 +78,12 @@ function init() {
     e.target.textContent = '链接已复制~';
     setTimeout(() => e.target.textContent = origin, 3000);
   });
-  document.body.appendChild(add);
+  content.appendChild(add);
   let localQr = JSON.parse(localStorage.getItem('_local_qr_codes_') || '["hello, world"]');
   let queryQr = parseQrFromQuery();
-  localQr.forEach(chl => document.body.insertBefore(createQR(chl), add));
+  localQr.forEach(chl => content.insertBefore(createQR(chl), add));
   if (queryQr) {
-    queryQr.filter(q => !localQr.find(i => i === q)).forEach(chl => document.body.insertBefore(createQR(chl), add));
+    queryQr.filter(q => !localQr.find(i => i === q)).forEach(chl => content.insertBefore(createQR(chl), add));
     updateLocalData();
     setTimeout(clearSearch, 300);
   }

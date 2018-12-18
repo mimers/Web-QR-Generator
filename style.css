@@ -1,18 +1,25 @@
 
 body {
-    display: flex;
     background: white;
     margin: 0;
     padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.content {
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
+    margin-top: 48px;
 }
 
 header {
     background-color: #24292e;
     color: white;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -62,10 +69,12 @@ svg {
 }
 
 .qr-img {
-    height: 400px;
-    width: 400px;
+    height: 360px;
+    width: 360px;
     transition: filter ease .5s;
     border-radius: 0px 0px 4px 4px;
+    display: flex;
+    padding: 20px;
 }
 
 .qr-input:focus + .qr-img {
