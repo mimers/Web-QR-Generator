@@ -8,5 +8,6 @@
 
 立即体验 [https://mimers.github.io/Web-QR-Generator/](https://mimers.github.io/Web-QR-Generator/)
 
+![demo](./qr-generator-capture.gif)
 
 > 纯前端的二维码生成方案，使用纯JS的[qrcodejs](https://github.com/davidshimjs/qrcodejs)库。
