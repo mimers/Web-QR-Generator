@@ -13,7 +13,7 @@ function bindImage(img, chl) {
     width: 360,
     height: 360,
     useSvg: true,
-    correctLevel: QRCode.CorrectLevel.H
+    correctLevel: QRCode.CorrectLevel.L
   });
   qr.makeCode(chl);
 }
