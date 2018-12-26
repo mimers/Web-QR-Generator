@@ -10,4 +10,4 @@
 
 ![demo](./qr-generator-capture.gif)
 
-> 纯前端的二维码生成方案，使用JS版QR Code库[qrcodejs](https://github.com/davidshimjs/qrcodejs)库。
+> 纯前端的二维码生成方案，使用JS版QR Code库[qrcodejs](https://github.com/davidshimjs/qrcodejs)。
