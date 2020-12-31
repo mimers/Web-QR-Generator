@@ -86,3 +86,44 @@ button.qr-add {
     width: 100px;
     font-size: 20px;
 }
+
+
+.facebook-wrapper {
+    position: fixed;
+    display: flex;
+    top: 0;
+    height: 520px;
+    top: 0;
+    bottom: 0;
+    left: 4rem;
+    right: 4rem;
+    margin: auto;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.facebook-main {
+    flex: 1;
+    height: 100%;
+    background-color: #fff;
+}
+
+.facebook-sidebar {
+    width: 360px;
+    background-color: #fff;
+    padding: 32px 0 16px 0;
+}
+
+@media (max-width: 800px) {
+    .facebook-sidebar {
+        display: none;
+    }
+}
+
+.facebook-close {
+    position: fixed;
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    cursor: pointer;
+    fill: #ddd;
+}

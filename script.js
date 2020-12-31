@@ -16,6 +16,19 @@ function bindImage(img, chl) {
     correctLevel: QRCode.CorrectLevel.L
   });
   qr.makeCode(chl);
+  let zoom = mediumZoom(img.querySelector('img'), {
+    margin: 24,
+    template: '#template-facebook',
+    container: '[data-zoom-container]',
+    background: 'rgb(29 162 216 / 94%)'
+  })
+  img.title = ''
+  zoom.on('opened', e => {
+    document.querySelector('.facebook-sidebar').textContent = chl
+  })
+  zoom.on('closed', e => {
+    document.querySelector('.facebook-sidebar').textContent = ''
+  })
 }
 
 function createQR(chl) {

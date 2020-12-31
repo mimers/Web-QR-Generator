@@ -3,6 +3,7 @@
     <title>二维码工厂</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./chart.png">
+    <script src="./medium-zoom.min.js"></script>
 </head>
 <body>
 <header>
@@ -20,5 +21,17 @@
 <div class="content"></div>
 <script src="./qrcode.js"></script>
 <script src="./script.js"></script>
+<template id="template-facebook">
+    <div class="facebook-wrapper">
+        <svg class="facebook-close" data-zoom-close viewBox="0 0 24 24">
+            <path
+                    d="M8.817 7.403a1 1 0 0 0-1.414 1.414L10.586 12l-3.183 3.183a1 1 0 0 0 1.414 1.415L12 13.415l3.183 3.183a1 1 0 0 0 1.415-1.415L13.415 12l3.183-3.183a1 1 0 0 0-1.415-1.414L12 10.586 8.817 7.403z"
+                    fill-rule="evenodd"
+            ></path>
+        </svg>
+        <section class="facebook-main" data-zoom-container></section>
+        <aside class="facebook-sidebar"></aside>
+    </div>
+</template>
 </body>
 </html>
