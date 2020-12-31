@@ -92,8 +92,7 @@ button.qr-add {
     position: fixed;
     display: flex;
     top: 0;
-    height: 520px;
-    top: 0;
+    height: 80vh;
     bottom: 0;
     left: 4rem;
     right: 4rem;
@@ -108,9 +107,12 @@ button.qr-add {
 }
 
 .facebook-sidebar {
-    width: 360px;
+    width: 40%;
     background-color: #fff;
-    padding: 32px 0 16px 0;
+    padding: 32px;
+    word-break: break-all;
+    overflow: auto;
+    border-left: 2px dashed gray;
 }
 
 @media (max-width: 800px) {

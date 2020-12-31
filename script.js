@@ -26,9 +26,6 @@ function bindImage(img, chl) {
   zoom.on('opened', e => {
     document.querySelector('.facebook-sidebar').textContent = chl
   })
-  zoom.on('closed', e => {
-    document.querySelector('.facebook-sidebar').textContent = ''
-  })
 }
 
 function createQR(chl) {
@@ -44,6 +41,8 @@ function createQR(chl) {
   }
   qrImg.addEventListener('click', function (e) {
     if (e.altKey) {
+      e.preventDefault()
+      e.stopPropagation()
       container.parentNode.removeChild(container);
       updateLocalData();
     }
